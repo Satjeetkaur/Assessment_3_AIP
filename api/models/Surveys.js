@@ -24,7 +24,7 @@ module.exports = {
       required: true
     },
 
- 	CreatedDate: {
+ 	  CreatedDate: {
       type: 'string',
       required: true
     },
@@ -37,6 +37,13 @@ module.exports = {
   	CreatedBy: {
       type: 'string',
       required: true
+    },
+
+
+    // Add a reference to SurveyQuestions
+    Id: {
+      collection: 'SurveyQuestions',
+      via: 'SurveyId'
     }
 
   }

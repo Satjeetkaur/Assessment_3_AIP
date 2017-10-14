@@ -16,18 +16,33 @@ module.exports = {
  	
     SurveyId: {
       type: 'integer',
-      required: true
+      required: true,
+      model: 'Surveys'
     },
 
-  	QuestionText: {
+  	Question1: {
   		type: 'string',
   		required: true
   	},
 
-    QuestionType: {
+    Question2: {
       type: 'string',
       required: true
-    }
+    },
+ 
+    Question3: {
+      type: 'string',
+      required: true
+    },
 
+    Question4: {
+      type: 'string',
+      required: true
+    },
+   
+   Question5: {
+      type: 'string',
+      required: true
+    },
   }
 };

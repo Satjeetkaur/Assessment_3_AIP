@@ -45,16 +45,7 @@ module.exports = {
   },
 
   // render the profile view (e.g. /views/show.ejs)
-  ViewRecord: function(req, res, next) {
-    User.findOne(req.param('id'), function foundUser(err, user) {
-      if (err) return next(err);
-      if (!user) return next();
-      res.view({
-        user: user
-      });
-    });
-  },
-  
+ 
 // render the profile view (e.g. /views/show.ejs)
   AdminLogin: function(req, res, next) {
     User.findOne(req.param('id'), function foundUser(err, user) {
@@ -148,7 +139,7 @@ module.exports = {
           }
 
           //Redirect to their profile page (e.g. /views/user/show.ejs)
-          res.redirect('/User/ViewRecord/' + user.id);
+          res.redirect('/Surveys/ViewSurvey/1');
         //});
       });
     });

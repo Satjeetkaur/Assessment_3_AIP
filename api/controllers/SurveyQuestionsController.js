@@ -42,13 +42,21 @@ module.exports = {
   },
 
   // render the profile view (e.g. /views/show.ejs)
-  ViewSurvey: function(req, res, next) {
-     SurveyQuestions.find(function foundUsers(err, survey) {
-      if (err) return next(err);
-      // pass the array down to the /views/User/UsersDetail.ejs page
-      res.view({
-        survey: survey
-      });
-    });
-  }
+ ViewQuestions: function(req, res, next) {
+     SurveyQuestions.findOne({Id:1}).exec(function (err, surveyQuestions){
+                        if (err) {
+                            return res.serverError(err);
+                          }
+                        if (!surveyQuestions) {
+                            return res.notFound('Could not find any record, sorry.');
+                          }
+                         res.view({
+                              surveyQuestions: surveyQuestions
+                          });
+                  });
+  }, 
+
+
+
+
 }

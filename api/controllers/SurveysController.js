@@ -39,8 +39,34 @@ module.exports = {
       //res.redirect('/SurveyQuestions/ViewSurvey/');
   
     });
-  }
+  },
 
-  // render the profile view (e.g. /views/show.ejs)
+ ViewSurvey: function(req, res, next) {
+     Surveys.findOne({ID:1}).exec(function (err, surveys){
+                        if (err) {
+                            return res.serverError(err);
+                          }
+                        if (!surveys) {
+                            return res.notFound('Could not find any record, sorry.');
+                          }
+                         res.view({
+                              surveys: surveys
+                          });
+                  });
+  //sails.log('Found "%s"', finn.Title);
+  //return res.json(finn);
+              
+  },
+
+  SaveSurvey: function(req, res, next) {
+     SurveyQuestions.find(function foundSurveyQuestions(err, surveyQuestions) {
+      if (err) return next(err);
+      // pass the array down to the /views/index.ejs page
+      res.view({
+        surveyQuestions: surveyQuestions
+      });
+    });
+              
+  },
   
 }
