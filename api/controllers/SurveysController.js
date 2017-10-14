@@ -15,7 +15,7 @@ module.exports = {
 
   create: function(req, res, next) {
 
-    SurveyQuestions.create(req.params.all(), function userCreated(err, user) {
+    Surveys.create(req.params.all(), function userCreated(err, user) {
 
      if (err) {
         console.log(err);
@@ -24,7 +24,7 @@ module.exports = {
         }
 
         // If error redirect back to sign-up page
-        return res.redirect('/SurveyQuestions/index');
+        return res.redirect('/Surveys/index');
       }
 
       // Log user in
@@ -36,19 +36,11 @@ module.exports = {
 
       sails.log('Wow, there are %d users named Finn.  Check it out:', req.session.authenticated);
       //res.redirect('/User/Success/'+ req.session.User);
-      res.redirect('/SurveyQuestions/ViewSurvey/');
+      //res.redirect('/SurveyQuestions/ViewSurvey/');
   
     });
-  },
+  }
 
   // render the profile view (e.g. /views/show.ejs)
-  ViewSurvey: function(req, res, next) {
-     SurveyQuestions.find(function foundUsers(err, survey) {
-      if (err) return next(err);
-      // pass the array down to the /views/User/UsersDetail.ejs page
-      res.view({
-        survey: survey
-      });
-    });
-  }
+  
 }
