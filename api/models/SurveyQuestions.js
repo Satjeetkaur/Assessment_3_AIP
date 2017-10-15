@@ -13,11 +13,17 @@ module.exports = {
   autoUpdatedAt:false,
 
   attributes: {
+
+    Id: {
+      type: 'integer',
+     
+    },
+
  	
     SurveyId: {
       type: 'integer',
       required: true,
-      model: 'Surveys'
+      
     },
 
   	Question1: {

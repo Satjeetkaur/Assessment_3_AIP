@@ -14,37 +14,35 @@ module.exports = {
 
   attributes: {
  	
-
-   Id: {
+    SurveyId: {
       type: 'integer',
-     
+      required: true,
+      
     },
 
-    Title: {
+  	Answer1: {
+  		type: 'string',
+  		required: true
+  	},
+
+    Answer2: {
+      type: 'string',
+      required: true
+    },
+ 
+    Answer3: {
       type: 'string',
       required: true
     },
 
-    Description: {
+    Answer4: {
       type: 'string',
       required: true
     },
-
- 	  CreatedDate: {
+   
+  Answer5: {
       type: 'string',
       required: true
     },
-
-    ExpiresOn: {
-      type: 'string',
-      required: true
-    },
-
-  	CreatedBy: {
-      type: 'string',
-      required: true
-    },
-
-
   }
 };

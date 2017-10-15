@@ -133,11 +133,19 @@ module.exports = {
           }
 
           //Redirect to their profile page (e.g. /views/user/show.ejs)
+<<<<<<< HEAD
           res.redirect('/Surveys/ViewSurvey/1');
          
           });
         });
     },
+=======
+          res.redirect('/Surveys/ViewSurvey/');
+        //});
+      });
+    });
+  },
+>>>>>>> 9b8a5af1c9750c0222298303977f8417bf82f560
 
 
     index22: function(req, res, next) {
