@@ -13,12 +13,6 @@ module.exports = {
   autoUpdatedAt:false,
 
   attributes: {
-
-    Id: {
-      type: 'integer',
-     
-    },
-
  	
     SurveyId: {
       type: 'integer',
@@ -26,27 +20,27 @@ module.exports = {
       
     },
 
-  	Question1: {
+  	Answer1: {
   		type: 'string',
   		required: true
   	},
 
-    Question2: {
+    Answer2: {
       type: 'string',
       required: true
     },
  
-    Question3: {
+    Answer3: {
       type: 'string',
       required: true
     },
 
-    Question4: {
+    Answer4: {
       type: 'string',
       required: true
     },
    
-   Question5: {
+  Answer5: {
       type: 'string',
       required: true
     },

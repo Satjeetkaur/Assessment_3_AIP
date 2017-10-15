@@ -12,8 +12,8 @@
 
 <div class='container' data-id= "<%= surveyQuestions.Id %>" data-model="surveyQuestions" >
 	
-<form action="" method="GET" style="margin-top: 8%; margin-left: 30%;margin-right: 30%;border: 1px solid green;padding: 15px;" id="sign-up-form" class="form-signin">
-
+<form action="/SurveyResponse/create" method="GET" style="margin-top: 8%; margin-left: 30%;margin-right: 30%;border: 1px solid green;padding: 15px;" id="sign-up-form" class="form-signin">
+<input type="hidden" value="<%= surveyQuestions.SurveyId %>" name="SurveyId"/>
 <div class="container">
 	<h3><%= surveyQuestions.Id %><%= surveyQuestions.Id %></h3>
 	<table class='table'>
@@ -25,32 +25,32 @@
 		
 		<tr>	
 			<td><%= surveyQuestions.Question1%></td>
-			<td><input type="radio" name="Answer1" value=" "/></td>
-			<td><input type="radio" name="Answer1" value=" "/></td>
+			<td><input type="radio" name="Answer1" value="Agree"/></td>
+			<td><input type="radio" name="Answer1" value="Disagree"/></td>
 		</tr> 
 
 		<tr>	
 			<td><%= surveyQuestions.Question2%></td>
-			<td><input type="radio" name="Answer2" value=" "/></td>
-			<td><input type="radio" name="Answer2" value=" "/></td>
+			<td><input type="radio" name="Answer2" value="Agree"/></td>
+			<td><input type="radio" name="Answer2" value="Disagree "/></td>
 		</tr> 
 
 		<tr>	
 			<td><%= surveyQuestions.Question3%></td>
-			<td><input type="radio" name="Answer3" value=" "/></td>
-			<td><input type="radio" name="Answer3" value=" "/></td>
+			<td><input type="radio" name="Answer3" value="AgreeAgree"/></td>
+			<td><input type="radio" name="Answer3" value="Disagree "/></td>
 		</tr> 
 
 		<tr>	
 			<td><%= surveyQuestions.Question4%></td>
-			<td><input type="radio" name="Answer4" value=" "/></td>
-			<td><input type="radio" name="Answer4" value=" "/></td>
+			<td><input type="radio" name="Answer4" value="Agree"/></td>
+			<td><input type="radio" name="Answer4" value="Disagree "/></td>
 		</tr> 
 
 		<tr>	
 			<td><%= surveyQuestions.Question5%></td>
-			<td><input type="radio" name="Answer5" value=" "/></td>
-			<td><input type="radio" name="Answer5" value=" "/></td>
+			<td><input type="radio" name="Answer5" value="Agree"/></td>
+			<td><input type="radio" name="Answer5" value="Disagree "/></td>
 		</tr> 
 
 	</table>
