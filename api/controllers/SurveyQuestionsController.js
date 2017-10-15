@@ -43,17 +43,14 @@ module.exports = {
 
   // render the questions information
  ViewQuestions: function(req, res, next) {
-     SurveyQuestions.findOne({Id:1}).exec(function (err, surveyQuestions){
-                        if (err) {
-                            return res.serverError(err);
-                          }
-                        if (!surveyQuestions) {
-                            return res.notFound('Could not find any record, sorry.');
-                          }
-                         res.view({
-                              surveyQuestions: surveyQuestions
-                          });
-                  });
+      SurveyQuestions.findOne(req.param('Id'), function foundSurveyQuestions(err,surveyQuestions) {
+      if (err) return next(err);
+      if (!surveyQuestions) return next('User doesn\'t exist.');
+
+      res.view({
+        surveyQuestions: surveyQuestions
+      });
+    });
   }, 
 
   UpdateQuestions: function(req, res, next) {
@@ -93,8 +90,6 @@ module.exports = {
 
   // process the info from edit view
   update: function(req, res, next) {
-
-  
     
       var userObj = {
         SurveyId :req.param('SurveyId'),

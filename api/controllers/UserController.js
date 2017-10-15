@@ -139,7 +139,7 @@ module.exports = {
           }
 
           //Redirect to their profile page (e.g. /views/user/show.ejs)
-          res.redirect('/Surveys/ViewSurvey/1');
+          res.redirect('/Surveys/ViewSurvey/');
         //});
       });
     });

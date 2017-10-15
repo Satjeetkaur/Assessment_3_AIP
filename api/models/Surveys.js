@@ -14,6 +14,12 @@ module.exports = {
 
   attributes: {
  	
+
+   Id: {
+      type: 'integer',
+     
+    },
+
     Title: {
       type: 'string',
       required: true
@@ -39,12 +45,6 @@ module.exports = {
       required: true
     },
 
-
-    // Add a reference to SurveyQuestions
-    Id: {
-      collection: 'SurveyQuestions',
-      via: 'SurveyId'
-    }
 
   }
 };
