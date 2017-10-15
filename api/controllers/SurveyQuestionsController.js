@@ -44,19 +44,15 @@ module.exports = {
   // render the profile view (e.g. /views/show.ejs)
  ViewQuestions: function(req, res, next) {
      SurveyQuestions.findOne({Id:1}).exec(function (err, surveyQuestions){
-                        if (err) {
-                            return res.serverError(err);
-                          }
-                        if (!surveyQuestions) {
-                            return res.notFound('Could not find any record, sorry.');
-                          }
-                         res.view({
-                              surveyQuestions: surveyQuestions
-                          });
-                  });
+          if (err) {
+             return res.serverError(err);
+          }
+          if (!surveyQuestions) {
+             return res.notFound('Could not find any record, sorry.');
+          }
+          res.view({
+             surveyQuestions: surveyQuestions
+           });
+     });
   }, 
-
-
-
-
 }

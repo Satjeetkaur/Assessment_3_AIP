@@ -44,7 +44,7 @@ MysqlServer: {
     adapter: 'sails-mysql',
     host: 'localhost',
     user: 'root', //optional
-    password: 'root', //optional
+    password: '', //optional
     database: 'Assessment3_2017' //optional
   }
 

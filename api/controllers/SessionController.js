@@ -2,7 +2,7 @@
  * SessionController
  *
  * @module		:: Controller
- * @description	:: Contains logic for handling requests.
+ * @description	:: Contains logic for handling session requests like create  and destroy. 
  */
 
 var bcrypt = require('bcrypt');
@@ -13,7 +13,7 @@ module.exports = {
 		res.view('Session/new');
 	},
 
-	create: function(req, res, next) {
+	create: function(req, res, next) { 
 
 		// Check for email and password in params sent via the form, if none
 		// redirect the browser back to the sign-in form.

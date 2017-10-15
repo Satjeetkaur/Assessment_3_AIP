@@ -15,9 +15,9 @@ module.exports = {
 
   create: function(req, res, next) {
 
-    Surveys.create(req.params.all(), function userCreated(err, user) {
+      Surveys.create(req.params.all(), function userCreated(err, user) {
 
-     if (err) {
+        if (err) {
         console.log(err);
         req.session.flash = {
           err: err
@@ -35,38 +35,31 @@ module.exports = {
       req.session.User.admin = 1;
 
       sails.log('Wow, there are %d users named Finn.  Check it out:', req.session.authenticated);
-      //res.redirect('/User/Success/'+ req.session.User);
-      //res.redirect('/SurveyQuestions/ViewSurvey/');
-  
-    });
+      });
   },
 
- ViewSurvey: function(req, res, next) {
+  ViewSurvey: function(req, res, next) {
      Surveys.findOne({ID:1}).exec(function (err, surveys){
-                        if (err) {
-                            return res.serverError(err);
-                          }
-                        if (!surveys) {
-                            return res.notFound('Could not find any record, sorry.');
-                          }
-                         res.view({
-                              surveys: surveys
-                          });
-                  });
-  //sails.log('Found "%s"', finn.Title);
-  //return res.json(finn);
-              
+          if (err) {
+              return res.serverError(err);
+          }
+          if (!surveys) {
+              return res.notFound('Could not find any record, sorry.');
+          }
+          res.view({
+             surveys: surveys
+          });
+     });
   },
 
   SaveSurvey: function(req, res, next) {
-     SurveyQuestions.find(function foundSurveyQuestions(err, surveyQuestions) {
-      if (err) return next(err);
-      // pass the array down to the /views/index.ejs page
-      res.view({
-        surveyQuestions: surveyQuestions
-      });
-    });
-              
+      SurveyQuestions.find(function foundSurveyQuestions(err, surveyQuestions) {
+          if (err) return next(err);
+          // pass the array down to the /views/index.ejs page
+          res.view({
+            surveyQuestions: surveyQuestions
+          });
+      });             
   },
-  
+    
 }
