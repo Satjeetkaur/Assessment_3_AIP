@@ -50,31 +50,6 @@ module.exports = {
       
   
     });
-      /*res.view({
-        surveyResponse1: surveyResponse1,
-         surveyResponse2: surveyResponse2xed
-      });*/
-              
+      
   }
-
-
-
- /* ViewResponse: function(req, res, next) {
-    req.session.User.admin = 0;
-     SurveyResponse.find(function foundsurveys(err, surveyResponse) {
-      if (err) return next(err);
-      // pass the array down to the /views/index.ejs page
-      res.view({
-        surveyResponse: surveyResponse
-      });
-    });
-  //sails.log('Found "%s"', finn.Title);
-  //return res.json(finn);
-              
-  }*/
-
-  
- 
-
-
 }
