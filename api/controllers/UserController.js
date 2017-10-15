@@ -2,7 +2,7 @@
  * UserController
  *
  * @module    :: Controller
- * @description :: Contains logic for handling requests.
+ * @description :: Contains logic for handling requests of the users.
  */
 
 
